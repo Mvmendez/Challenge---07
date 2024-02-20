@@ -7,13 +7,13 @@ const getRandomSuit = () => {
   let suit;
   let suitNumber = Math.floor(Math.random() * 4);
   if (suitNumber === 0) {
-    suit = 'diamonds';
+    suit = "diamonds";
   } else if (suitNumber === 1) {
-    suit = 'hearts';
+    suit = "hearts";
   } else if (suitNumber === 2) {
-    suit = 'clovers';
+    suit = "clovers";
   } else {
-    suit = 'spades';
+    suit = "spades";
   }
   return suit;
 };
@@ -27,31 +27,32 @@ const getRandomCard = () => {
   if (currentCard.value < 11) {
     currentCard.face = currentCard.value;
   } else if (currentCard.value === 11) {
-    currentCard.face = 'Jack';
+    currentCard.face = "Jack";
   } else if (currentCard.value === 12) {
-    currentCard.face = 'Queen';
+    currentCard.face = "Queen";
   } else if (currentCard.value === 13) {
-    currentCard.face = 'King';
+    currentCard.face = "King";
   } else if (currentCard.value === 14) {
-    currentCard.face = 'Ace';
+    currentCard.face = "Ace";
   }
 
-  return currentCard;
+  let cardElement = document.querySelector("p.actualCard");
+  cardElement.innerHTML = getRandomCard;
 };
 
 const userChoice = () => {
-  let userCard = prompt('Elija mayor o menor.').toLowerCase();
-  while (userCard !== 'mayor' && userCard !== 'menor') {
-    userCard = prompt('Debe elegir mayor o menor.').toLowerCase();
+  let userCard = prompt("Elija mayor o menor.").toLowerCase();
+  while (userCard !== "mayor" && userCard !== "menor") {
+    userCard = prompt("Debe elegir mayor o menor.").toLowerCase();
   }
   return userCard;
 };
 
 export function game() {
-  alert(`Bienvenido a ISDI Casino!
+  /*alert(`Bienvenido a ISDI Casino!
   El sistema le mostrará una carta
   apueste si la próxima carta será mayor o menor.
-  El juego acaba tras 11 rondas`);
+  El juego acaba tras 11 rondas`);}*/
   let rounds = 0;
   let score = 0;
   let continuePlaying = true;
@@ -63,26 +64,26 @@ export function game() {
     while (flipCard.value === showCard.value) {
       flipCard = getRandomCard();
     }
-    if (userBet === 'mayor' && flipCard.value > showCard.value) {
-      alert(`La nueva carta es ${flipCard.face} of ${flipCard.suit}`);
-      alert('Has ganado!');
+    if (userBet === "mayor" && flipCard.value > showCard.value) {
+      /* alert(`La nueva carta es ${flipCard.face} of ${flipCard.suit}`);
+      alert('Has ganado!'); */
       score += 1;
       rounds += 1;
-    } else if (userBet === 'menor' && flipCard.value < showCard.value) {
-      alert(`La nueva carta es ${flipCard.face} of ${flipCard.suit}`);
-      alert('Has ganado!');
+    } else if (userBet === "menor" && flipCard.value < showCard.value) {
+      /* alert(`La nueva carta es ${flipCard.face} of ${flipCard.suit}`);
+      alert('Has ganado!'); */
       score += 1;
       rounds += 1;
     } else {
-      alert(`La nueva carta es ${flipCard.face} of ${flipCard.suit}`);
-      alert('Has perdido!');
+      /*alert(`La nueva carta es ${flipCard.face} of ${flipCard.suit}`);
+      alert('Has perdido!'); */
       rounds += 1;
     }
-    continuePlaying = confirm('¿Quieres continuar jugando?');
+    continuePlaying = confirm("¿Quieres continuar jugando?");
   }
   if (rounds >= 10) {
-    alert(`Fin del juego
+    /* alert(`Fin del juego
  rondas: ${rounds}
- puntuación: ${score} `);
+ puntuación: ${score} `); */
   }
 }

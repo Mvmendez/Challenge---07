@@ -41,10 +41,10 @@ const getRandomCard = () => {
 };
 
 const userChoice = () => {
-  let userCard = prompt("Elija mayor o menor.").toLowerCase();
+  /* let userCard = prompt("Elija mayor o menor.").toLowerCase();
   while (userCard !== "mayor" && userCard !== "menor") {
     userCard = prompt("Debe elegir mayor o menor.").toLowerCase();
-  }
+  }*/
   return userCard;
 };
 

@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script type="module" src="index.js"></script>
     <title>Document</title>
+    <link rel="stylesheet" href="main.ccs"/>
+    ,<script type="module" src="game.js"></script>
   </head>
   <body>
     <header>
@@ -23,10 +25,28 @@
 
       <form> 
         <label>
-          Nombre de usuario:
+          Nombre:
         <input type="text" placeholder="Dime tu nombre">
         </label>
       </form>
+      <h2>Primera carta</h2>
+
+      <h2>Selecciona Mayor o Menor</h2>
+      <form>
+        <label>
+          <input type="radio" name="Option" value="Mayor" required> Carta mayor 
+        </label>
+        <label> 
+          <input type="radio" name="Option" value="Menor" required> Carta menor
+        </label>  
+         <br>
+         <br>
+        <button type="submit>">Enviar</button>
+      </form>
+
+
+
+
 
   </body>
 </html>
